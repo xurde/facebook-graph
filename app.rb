@@ -33,7 +33,7 @@ class FacebookInfo < Sinatra::Base
     @graph = Koala::Facebook::API.new(access_token, APP_SECRET)
     @profile = @graph.get_object("me")
 
-    user = User.find_or_create_by_fb_id(:fb_id => @profile["id"])
+    user = User.find_or_create_by(:fb_id => @profile["id"])
 
     if user
       user.update_attributes(

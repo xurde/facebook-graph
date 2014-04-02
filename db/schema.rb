@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140402200458) do
   enable_extension "plpgsql"
 
   create_table "users", force: true do |t|
-    t.integer  "fb_id"
+    t.string   "fb_id"
     t.string   "access_token"
     t.string   "username"
     t.string   "name"
