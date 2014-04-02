@@ -1,0 +1,9 @@
+%section{:class => "content"}
+	%header{:class => "text-center"}
+		%div{:class => "jumbotron"}
+			%h1{:class => "huge"}= "Hello<br/>#{@user[:name]}"
+			%p{}= "You come from <strong>#{@user[:hometown]}</strong> and you are currently living in <strong>#{@user[:location]}</strong>"
+			%p{}= "Your Facebook username is: <strong>#{@user[:username]}</strong>"
+			%p{}= "Your Facebook ID is: <strong>#{@user[:fb_id]}</strong>"
+			%p{:class => "text-danger"}= "This is your Access Token (DO NOT SHARE!)"
+			%input{:type => "text", :readonly => "yes", :value => @user[:access_token], :class => "form-control input-lg"}

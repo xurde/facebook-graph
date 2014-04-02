@@ -1,0 +1,8 @@
+%section{:class => "content"}
+	%header{:class => "text-center"}
+		%div{:class => "jumbotron"}
+			%h1= "Facebook Graph"
+			%p= "Login with you Facebook account, please"
+			%p{:class => "fb-login-button"}
+				%a{:href => @oauth.url_for_oauth_code}
+					%img{:src => "facebook-login.png"}
