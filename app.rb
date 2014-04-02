@@ -13,7 +13,11 @@ require './models/user'
 
 APP_ID = "225822807607273"
 APP_SECRET = "c24367e01fc94ea71b50a0aceaa9e19a"
-CALLBACK_URL = "http://localhost:9292/facebook_callback"
+if self.class.development?
+  CALLBACK_URL = "http://localhost:9292/facebook_callback"
+else
+  CALLBACK_URL = "http://facebook-info.herokuapp.com/facebook_callback"
+end
 
 get '/' do
   @oauth = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, CALLBACK_URL)
