@@ -11,4 +11,9 @@ configure :production, :development do
   		:database => db.path[1..-1],
   		:encoding => 'utf8'
   )
+
+	if defined?(ActiveRecord::Base)
+    ActiveRecord::Base.connection.disconnect!
+  end
+
 end
