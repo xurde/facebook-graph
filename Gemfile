@@ -7,6 +7,7 @@ gem "haml"
 gem "json"
 gem "http"
 gem "koala"
+gem "activerecord"
 gem "sinatra-activerecord"
 gem "pg"
 

@@ -74,6 +74,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   haml
   http
   json

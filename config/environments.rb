@@ -1,6 +1,7 @@
 #The environment variable DATABASE_URL should be in the following format:
 # => postgres://{user}:{password}@{host}:{port}/path
 configure :production, :development do
+
 	db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
   ActiveRecord::Base.establish_connection(
@@ -11,9 +12,5 @@ configure :production, :development do
   		:database => db.path[1..-1],
   		:encoding => 'utf8'
   )
-
-	if defined?(ActiveRecord::Base)
-    ActiveRecord::Base.connection.disconnect!
-  end
 
 end
