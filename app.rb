@@ -80,4 +80,9 @@ class FacebookInfo < Sinatra::Base
     end
   end
 
+  after do
+    # Close the connection after the request is done so that we don't
+    ActiveRecord::Base.connection.close
+  end
+
 end
