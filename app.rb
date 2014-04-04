@@ -16,7 +16,7 @@ class FacebookInfo < Sinatra::Base
   APP_ID = "225822807607273"
   APP_SECRET = "c24367e01fc94ea71b50a0aceaa9e19a"
   if Sinatra::Base.development?
-    CALLBACK_URL = "http://localhost:9292/facebook_callback"
+    CALLBACK_URL = "http://facebook-graph.dev/facebook_callback"
   else
     CALLBACK_URL = "http://facebook-info.herokuapp.com/facebook_callback"
   end
